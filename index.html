@@ -1,106 +1,628 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <title>Reklama Xizmatlari</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/dark-mosaic.png');
-      background-size: auto;
-      background-repeat: repeat;
-      color: #f1f1f1;
-    }
-
-    header {
-      text-align: center;
-      padding: 50px 20px;
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-      color: #00ffd5;
-    }
-
-    p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-
-    .button {
-      padding: 12px 24px;
-      background-color: #00ffd5;
-      color: #000;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .button:hover {
-      background-color: #00bfa6;
-    }
-
-    section {
-      padding: 40px 20px;
-      background: rgba(255, 255, 255, 0.05);
-      margin: 20px auto;
-      max-width: 800px;
-      border-radius: 10px;
-    }
-
-    h2 {
-      color: #ffffff;
-      margin-bottom: 15px;
-    }
-
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      background: rgba(0, 0, 0, 0.6);
-      color: #888;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITECHNIK_SH.J.O Reklama Xizmatlari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cosmos-blue: #0F1C3F;
+            --neon-blue: #00FFFF;
+            --galaxy-purple: #9B59B6;
+            --star-silver: #C0C0C0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--cosmos-blue);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(155, 89, 182, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 30%, rgba(0, 255, 255, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 50% 80%, rgba(192, 192, 192, 0.1) 0%, transparent 30%);
+        }
+        
+        header {
+            background: rgba(15, 28, 63, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            border-bottom: 1px solid var(--neon-blue);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 400;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--neon-blue);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--neon-blue);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--neon-blue);
+            padding: 0.8rem 2rem;
+            border: 2px solid var(--neon-blue);
+            border-radius: 50px;
+            font-family: 'Orbitron', sans-serif;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+        
+        .btn:hover {
+            background: var(--neon-blue);
+            color: var(--cosmos-blue);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+            transform: translateY(-3px);
+        }
+        
+        .services {
+            padding: 5rem 2rem;
+            background-color: rgba(15, 28, 63, 0.7);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--neon-blue);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+            border: 1px solid var(--neon-blue);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--neon-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 1rem;
+            color: var(--star-silver);
+        }
+        
+        .price-tag {
+            display: inline-block;
+            background: rgba(0, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .portfolio {
+            padding: 5rem 2rem;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(15, 28, 63, 0.9), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact {
+            padding: 5rem 2rem;
+            background-color: rgba(15, 28, 63, 0.7);
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+        
+        .price-box {
+            background: rgba(0, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border: 1px solid var(--neon-blue);
+        }
+        
+        .price-box h4 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .price-box ul {
+            list-style-type: none;
+        }
+        
+        .price-box li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .price-box li::before {
+            content: "•";
+            color: var(--neon-blue);
+            position: absolute;
+            left: 0;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--star-silver);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 5px;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-form button {
+            background: var(--neon-blue);
+            color: var(--cosmos-blue);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .contact-form button:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+        }
+        
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--neon-blue);
+        }
+        
+        .additional-services {
+            background: rgba(0, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border: 1px dashed var(--neon-blue);
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <header>
-    <h1>Biznesingiz uchun Reklama Xizmatlari</h1>
-    <p>Sayt yaratish, reklama va boshqa xizmatlar — barchasi bizda!</p>
-    <a href="#murojat" class="button">Murojaat qilish</a>
-  </header>
-
-  <section>
-    <h2>Xizmatlar:</h2>
-    <ul>
-      <li>Sayt yaratish (vizitka, blog, do‘kon)</li>
-      <li>Reklama bannerlari tayyorlash</li>
-      <li>Instagram va Telegram sahifa yuritish</li>
-      <li>Google Ads va SMM xizmati</li>
-    </ul>
-  </section>
-
-  <section id="murojat">
-    <h2>Bog‘lanish:</h2>
-    <p>Telefon: +998 99 123 45 67</p>
-    <p>Telegram: <a href="https://t.me/username" style="color:#00ffd5;">@username</a></p>
-  </section>
-
-  <footer>
-    &copy; 2025 Reklama Agentligi. Barcha huquqlar himoyalangan.
-  </footer>
-
+    <div class="stars" id="stars"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">ITECHNIK_SH.J.O</div>
+            <ul class="nav-links">
+                <li><a href="#services">Xizmatlar</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Bog'lanish</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1 class="floating">REKLAMA XIZMATLARI</h1>
+        <p>Professional reklama va veb-ishlab chiqish xizmatlari. Biz bilan zamonaviy yechimlarni yarating!</p>
+        <a href="#contact" class="btn">Bog'lanish</a>
+    </section>
+    
+    <section class="services" id="services">
+        <h2 class="section-title">Xizmatlarimiz</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <h3>Sayt yaratish</h3>
+                <p>HTML, WordPress, mobilga moslashtirilgan zamonaviy veb-saytlar. Brendingiz uchun unikal dizaynlar.</p>
+                <span class="price-tag">3$ dan boshlab</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Instagram reklama</h3>
+                <p>Auditoriyani ko'paytirish, samarali kontent strategiyalari va professional reklama kampaniyalari.</p>
+                <span class="price-tag">1.5$ dan boshlab</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✈️</div>
+                <h3>Telegram reklama</h3>
+                <p>Kanal va bot reklamalari, auditoriyani jalb qilish va faollashtirish bo'yicha mutaxassislik.</p>
+                <span class="price-tag">1.5$ dan boshlab</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎮</div>
+                <h3>Veb-saytli o'yin</h3>
+                <p>Mijozlaringizni jalb qilish uchun interaktiv veb-o'yinlar. Brendingiz uchun maxsus ishlab chiqilgan.</p>
+                <span class="price-tag">Kelishilgan narx</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>Google Ads</h3>
+                <p>Professional reklama kampaniyalari, maqsadli auditoriyaga yetish va yuqori ROI.</p>
+                <span class="price-tag">Kelishilgan narx</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Grafik dizayn</h3>
+                <p>Logotip, banner va postlar uchun zamonaviy dizaynlar. Brending va korporativ stil.</p>
+                <span class="price-tag">Kelishilgan narx</span>
+            </div>
+        </div>
+    </section>
+    
+    <section class="portfolio" id="portfolio">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Web Design Project">
+                <div class="portfolio-overlay">
+                    <h3>E-commerce Sayti</h3>
+                    <p>Online do'kon uchun to'liq funktsional veb-sayt</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Instagram Campaign">
+                <div class="portfolio-overlay">
+                    <h3>Fitness Brendi</h3>
+                    <p>Instagramda o'sish strategiyasi va kontent rejasi</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Telegram Bot">
+                <div class="portfolio-overlay">
+                    <h3>Education Bot</h3>
+                    <p>Telegram orqali ta'lim beruvchi interaktiv bot</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact" id="contact">
+        <h2 class="section-title">Bog'lanish</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>ITECHNIK_SH.J.O Reklama Xizmati</h3>
+                <p>Quyidagi ma'lumotlar orqali biz bilan bog'lanishingiz mumkin:</p>
+                <p>📧 javoxirxusanov38@gmail.com</p>
+                <p>📞 +998 97 015 06 11</p>
+                
+                <div class="price-box">
+                    <h4>XIZMATLAR NARXI:</h4>
+                    <ul>
+                        <li>Sayt yaratish - <strong>3$</strong></li>
+                        <li>Reklama - <strong>1.5$</strong></li>
+                        <li>Boshqa xizmatlar narxi kelishilgan holda</li>
+                    </ul>
+                </div>
+                
+                <div class="additional-services">
+                    <h4>Qo'shimcha Xizmatlar:</h4>
+                    <p>IDEA VA BUYERDA QAYD ETILMAGAN HIZMATLARNING BAZILARINI HAM QILISHIMIZ MUMKUN. BUNING UCHUN BIZ BILAN BOG'LANING!</p>
+                    <p style="margin-top: 10px;">VEB SAYTLI O'YIN HAM YARATIB BERAMIZ!</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Ismingiz</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Xabar</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit">Xabarni yuborish</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="social-links">
+            <a href="https://t.me/itechnikshjo" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p>&copy; 2025 ITECHNIK_SH.J.O Reklama Xizmatlari. Barcha huquqlar himoyalangan.</p>
+    </footer>
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <script>
+        // Create stars
+        const starsContainer = document.getElementById('stars');
+        const starsCount = 200;
+        
+        for (let i = 0; i < starsCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            const size = Math.random() * 2 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            
+            const duration = `${Math.random() * 5 + 3}s`;
+            star.style.setProperty('--duration', duration);
+            
+            starsContainer.appendChild(star);
+        }
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
